@@ -13,8 +13,7 @@
   &__right {
     width: calc(100% - var(--sidebar-w));
     margin-left: var(--sidebar-w);
-    background-color: #F7F8F9;
-
+    background-color: #f7f8f9;
 
     @include md-screen {
       width: 100%;
@@ -41,7 +40,7 @@
       }
 
       .text {
-        color: hsl(var(--base-two) / .6);
+        color: hsl(var(--base-two) / 0.6);
         font-weight: 400;
         line-height: 120%;
         margin-bottom: 0;
@@ -92,8 +91,8 @@
       place-content: center;
       border-radius: 50%;
       flex-shrink: 0;
-      border: 1px solid hsl(var(--base-two) / .3);
-      color: hsl(var(--base-two) / .3);
+      border: 1px solid hsl(var(--base-two) / 0.3);
+      color: hsl(var(--base-two) / 0.3);
       transition: all linear 0.3s;
 
       i {
@@ -116,10 +115,9 @@
       font-size: rem(40px);
       font-weight: 500;
 
-
       .currency {
         font-size: 14px;
-        color: hsl(var(--base-two) / .3);
+        color: hsl(var(--base-two) / 0.3);
       }
 
       @media (max-width: 1799px) {
@@ -133,11 +131,10 @@
       @include msm-screen {
         font-size: rem(24px);
       }
-
     }
 
     &__text {
-      color: hsl(var(--base-two) / .3);
+      color: hsl(var(--base-two) / 0.3);
       font-weight: 600;
       line-height: 120%;
       margin-bottom: 12px;
@@ -158,7 +155,7 @@
       }
 
       .title {
-        color: hsl(var(--base-two) / .3);
+        color: hsl(var(--base-two) / 0.3);
       }
 
       .amount {
@@ -179,10 +176,10 @@
   }
 
   .dropdown-item {
-    color: hsl(var(--base-two) / .75);
+    color: hsl(var(--base-two) / 0.75);
 
     &:active {
-      background-color: hsl(var(--base-two) / .05);
+      background-color: hsl(var(--base-two) / 0.05);
       color: hsl(var(--base-two));
     }
 
@@ -201,7 +198,6 @@
       font-weight: 500;
     }
   }
-
 }
 
 .user-profile {
@@ -225,7 +221,7 @@
 
   .icon {
     margin-left: 4px;
-    color: hsl(var(--base-two) / .4);
+    color: hsl(var(--base-two) / 0.4);
     display: flex;
     font-size: 0.875rem;
   }
@@ -327,7 +323,7 @@
   }
 
   .icon {
-    color: hsl(var(--base-two) / .3);
+    color: hsl(var(--base-two) / 0.3);
     padding-left: 12px;
   }
 }
@@ -435,7 +431,7 @@
   }
 
   .form--label {
-    color: hsl(var(--base-two) / .6);
+    color: hsl(var(--base-two) / 0.6);
   }
 
   &-header {
@@ -443,7 +439,6 @@
   }
 
   &:has(table) {
-
     .create-card-footer,
     .create-card-body {
       max-width: 1190px;
@@ -487,7 +482,7 @@
     --color: 220 12% 95%;
     --shadow-color: var(--base-two);
     --bg-color: 219 13% 74%;
-    --text-color: hsl(var(--base-two) / .3);
+    --text-color: hsl(var(--base-two) / 0.3);
     width: 266px;
     width: calc(100% / 4);
     position: relative;
@@ -556,9 +551,8 @@
       font-weight: 600;
       line-height: 120%;
       box-shadow: 0 0 0 1px hsl(var(--white)),
-        0 0 0 4px hsl(var(--shadow-color)/0.1),
-        0 0 0 5px hsl(var(--white)),
-        0 0 0 7px hsl(var(--shadow-color)/0.05);
+        0 0 0 4px hsl(var(--shadow-color) / 0.1), 0 0 0 5px hsl(var(--white)),
+        0 0 0 7px hsl(var(--shadow-color) / 0.05);
       flex-shrink: 0;
     }
 
@@ -582,7 +576,7 @@
 }
 
 .wight-title {
-  color: hsl(var(--base-two) / .8);
+  color: hsl(var(--base-two) / 0.8);
   font-size: 16px;
   font-weight: 600;
   padding-right: 16px;
@@ -592,7 +586,7 @@
 
 .form--check-inner {
   height: 54px;
-  border: 1px solid hsl(var(--base-two) / .15);
+  border: 1px solid hsl(var(--base-two) / 0.15);
   flex: 1;
   border-radius: 8px;
   display: flex;
@@ -626,8 +620,8 @@
   }
 
   &:has(input:checked) {
-    border: 1px solid hsl(var(--base) / .3);
-    background: hsl(var(--base) / .05);
+    border: 1px solid hsl(var(--base) / 0.3);
+    background: hsl(var(--base) / 0.05);
   }
 
   &:not(:last-child) {
@@ -646,7 +640,6 @@
         width: 12px;
       }
     }
-
   }
 
   &-content {
@@ -657,7 +650,7 @@
     margin-bottom: 8px;
     font-weight: 600;
     font-size: rem(20px);
-    color: hsl(var(--base-two) / .8);
+    color: hsl(var(--base-two) / 0.8);
     display: block;
 
     @include xl-screen {
@@ -682,7 +675,7 @@
   }
 
   &-desc {
-    color: hsl(var(--base-two) / .6);
+    color: hsl(var(--base-two) / 0.6);
   }
 }
 
@@ -731,11 +724,11 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  color: hsl(var(--base-two) / .3);
+  color: hsl(var(--base-two) / 0.3);
   font-weight: 600;
   padding: 14px 16px;
   line-height: 1;
-  border: 1px solid hsl(var(--base-two) / .2);
+  border: 1px solid hsl(var(--base-two) / 0.2);
   border-radius: 8px;
 
   @include msm-screen {
@@ -754,14 +747,13 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 1px solid hsl(var(--base-two) / .3);
+    border: 1px solid hsl(var(--base-two) / 0.3);
 
     @include msm-screen {
       width: 16px;
       height: 16px;
     }
   }
-
 
   &.active {
     border: 1px solid hsl(var(--base));
@@ -797,8 +789,8 @@
   align-items: center;
   align-self: stretch;
   border-radius: 14px;
-  border: 1px dashed hsl(var(--base-two) / .3);
-  background: hsl(var(--base-two) / .02);
+  border: 1px dashed hsl(var(--base-two) / 0.3);
+  background: hsl(var(--base-two) / 0.02);
   gap: 8px;
   cursor: pointer;
   color: hsl(var(--base-two) / 0.3);
@@ -813,11 +805,11 @@
 }
 
 .graph-heading {
-  border-bottom: 1px solid #F7F8F9;
+  border-bottom: 1px solid #f7f8f9;
   padding-bottom: 16px;
 
   &__name {
-    color: hsl(var(--base-two) / .3);
+    color: hsl(var(--base-two) / 0.3);
     font-size: rem(14px);
     margin-bottom: 4px;
     display: block;
@@ -838,7 +830,7 @@
     align-items: center;
     padding: 24px;
     border-radius: 12px;
-    border: 1px solid hsl(var(--base-two) / .1);
+    border: 1px solid hsl(var(--base-two) / 0.1);
 
     &:not(:last-child) {
       margin-bottom: 16px;
@@ -872,7 +864,7 @@
       align-items: center;
       flex-shrink: 0;
       border-radius: 6px;
-      background: hsl(var(--base-two) / .05);
+      background: hsl(var(--base-two) / 0.05);
       font-size: rem(20px);
 
       @include msm-screen {
@@ -885,7 +877,7 @@
     .delete-btn {
       flex-shrink: 0;
       font-size: rem(20px);
-      color: hsl(var(--base-two) / .3);
+      color: hsl(var(--base-two) / 0.3);
       background-color: transparent;
       display: flex;
       padding: 0;
@@ -904,7 +896,7 @@
 }
 
 .text-muted {
-  color: hsl(var(--base-two) / .4) !important;
+  color: hsl(var(--base-two) / 0.4) !important;
 }
 
 .setting {
@@ -962,7 +954,7 @@
     font-size: 24px;
     padding: 6px;
     margin-bottom: 12px;
-    color: hsl(var(--base-two) / .6);
+    color: hsl(var(--base-two) / 0.6);
     display: none;
 
     @include xl-screen {
@@ -975,14 +967,13 @@
     top: 0;
     right: 6px;
     font-size: 20px;
-    color: hsl(var(--base-two) / .6);
+    color: hsl(var(--base-two) / 0.6);
     padding: 6px;
     display: none;
 
     @include xl-screen {
       display: block;
     }
-
   }
 
   &-nav {
@@ -996,11 +987,11 @@
       padding: 12px 24px;
       border-radius: 24px;
       width: 100%;
-      color: hsl(var(--base-two) / .8);
+      color: hsl(var(--base-two) / 0.8);
       line-height: 120%;
 
       &.active {
-        background-color: hsl(var(--base) / .05);
+        background-color: hsl(var(--base) / 0.05);
         color: hsl(var(--base));
         font-weight: 600;
       }
@@ -1010,7 +1001,7 @@
   &-body {
     width: calc(100% - var(--side-w));
     padding-inline: var(--body-p);
-    border-left: 1px solid hsl(var(--base-two) / .05);
+    border-left: 1px solid hsl(var(--base-two) / 0.05);
 
     @include xl-screen {
       width: 100%;
@@ -1020,7 +1011,7 @@
   &-block {
     padding: 32px;
     border-radius: 12px;
-    border: 1px solid hsl(var(--base-two) / .2);
+    border: 1px solid hsl(var(--base-two) / 0.2);
 
     &:not(:last-child) {
       margin-bottom: 24px;
@@ -1077,7 +1068,7 @@
     }
 
     .email {
-      color: hsl(var(--base-two) / .5);
+      color: hsl(var(--base-two) / 0.5);
     }
   }
 }
@@ -1126,7 +1117,7 @@
   }
 
   h6 {
-    color: hsl(var(--base-two) / .8);
+    color: hsl(var(--base-two) / 0.8);
     font-weight: 700;
     font-size: rem(16px);
 
@@ -1164,13 +1155,13 @@
 // list group
 
 .list-group-item {
-  border-color: hsl(var(--base-two) / .07);
-  color: hsl(var(--base-two) / .5);
+  border-color: hsl(var(--base-two) / 0.07);
+  color: hsl(var(--base-two) / 0.5);
   border-style: dashed;
 
   &.active {
     border-radius: 6px;
-    background-color: hsl(var(--base-two) / .05);
+    background-color: hsl(var(--base-two) / 0.05);
     color: hsl(var(--base-two));
     border: 0;
   }
@@ -1195,12 +1186,12 @@
 }
 
 .total-amount {
-  border-top: 1px solid hsl(var(--base-two) / .08);
+  border-top: 1px solid hsl(var(--base-two) / 0.08);
 }
 
 .bulk-table {
   td button i {
-    color: hsl(var(--base-two) / .5);
+    color: hsl(var(--base-two) / 0.5);
   }
 
   td button:hover i {
