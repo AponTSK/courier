@@ -1,0 +1,69 @@
+ /* =========================================== Blog Details Css Start ==============================*/
+ .blog-details {
+   border-radius: 8px;
+   overflow: hidden;
+   height: 100%;
+   background-color: hsl(var(--white));
+
+   &__thumb {
+     height: 450px;
+     max-height: 100%;
+
+     @include md-screen {
+       height: 350px;
+     }
+
+     @include sm-screen {
+       height: 300px;
+     }
+   }
+
+   &__content {
+     padding: 35px 25px;
+     border: 1px solid hsl(var(--black) / .1);
+     border-bottom-left-radius: inherit;
+     border-bottom-right-radius: inherit;
+
+     @include sm-screen {
+       padding: 30px 20px;
+     }
+
+     @include msm-screen {
+       padding: 25px 15px;
+     }
+   }
+
+   &__title {
+     margin-top: 20px;
+     margin-bottom: 15px;
+   }
+
+   &__desc {
+     margin-bottom: 15px;
+   }
+
+   .social-list {
+     &__link {
+       color: hsl(var(--text-color));
+
+       &:hover {
+         border-color: hsl(var(--base));
+         color: hsl(var(--white));
+       }
+     }
+   }
+ }
+
+ .quote-text {
+   background-color: hsl(var(--base) / 0.1);
+   padding: 24px 20px;
+   border-radius: 5px;
+   border-left: 3px solid hsl(var(--base));
+   margin-bottom: 20px;
+
+   @include sm-screen {
+     padding: 24px 16px;
+   }
+ }
+
+ /* ========================================== Blog Details Css End ======================================*/

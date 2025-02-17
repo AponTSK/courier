@@ -1,0 +1,73 @@
+.newsletter-wrapper {
+    border: 1px solid hsl(var(--base) / .4);
+    background-color: hsl(var(--base) / .05);
+    border-radius: 40px;
+    --n-width: 680px;
+    position: relative;
+    z-index: 1;
+
+    @include lg-screen {
+        border-radius: 24px;
+    }
+
+    &__shape {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        z-index: -1;
+
+        @include lg-screen {
+            display: none;
+        }
+    }
+
+    .section-heading {
+        max-width: var(--n-width);
+        width: 100%;
+    }
+}
+
+.newsletter-content {
+    padding-block: 80px;
+    padding-left: 56px;
+
+    @include lg-screen {
+        padding: 50px 32px;
+    }
+
+    @include msm-screen {
+        padding: 32px 24px;
+    }
+
+    @include xsm-screen {
+        padding: 24px 16px;
+    }
+}
+
+.newsletter-form {
+    max-width: var(--n-width);
+    width: 100%;
+    display: flex;
+    gap: 16px;
+
+    @include xsm-screen {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .form--control {
+        background-color: hsl(var(--white));
+        flex: 1;
+    }
+}
+
+.newsletter-image {
+    margin-top: -40px;
+    max-width: 270px;
+    width: 100%;
+    margin-inline: auto;
+}

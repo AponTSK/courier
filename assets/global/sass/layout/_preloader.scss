@@ -1,0 +1,138 @@
+/* ================================= preload Css Start =========================== */
+.preloader {
+  position: fixed;
+  z-index: 999999;
+  background-color: hsl(var(--white));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader {
+  position: relative;
+  width: 80px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(hsl(var(--base) / 0.8), hsl(var(--base) / 0.8)),
+    linear-gradient(hsl(var(--secondary)), hsl(var(--secondary))),
+    linear-gradient(hsl(var(--secondary)), hsl(var(--secondary)));
+  background-size: 55px 50px, 20px 35px, 20px 20px;
+  background-position: 0 0, 55px 15px, 70px 30px;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 6px;
+  height: 6px;
+  background: hsl(var(--white));
+  border-radius: 50%;
+  outline: 2px solid hsl(var(--white));
+  box-sizing: content-box;
+  border: 6px solid hsl(var(--black)/0.8);
+  box-shadow: 40px 0 0 -6px hsl(var(--white)),
+    40px 0 hsl(var(--black)/0.8),
+    0 0 0 2px hsl(var(--white)),
+    0 0 10px hsl(var(--white) / 0.5),
+    40px 0 0 2px hsl(var(--white)),
+    40px 0 10px hsl(var(--white) / 0.5);
+  -webkit-animation: wheelSk 0.75s ease-in infinite alternate;
+  animation: wheelSk 0.75s ease-in infinite alternate;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0px;
+  height: 50px;
+  width: 50px;
+  background-image: linear-gradient(hsl(var(--black) / 0.1) 30px, transparent 0),
+    linear-gradient(hsl(var(--black) / 0.1) 30px, transparent 0),
+    linear-gradient(hsl(var(--black) / 0.1) 30px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 20px 3px;
+  background-position: 0px 8px, 6px 25px, 0px 42px;
+  animation: lineDropping 0.75s linear infinite;
+}
+
+@keyframes wheelSk {
+
+  0%,
+  50%,
+  100% {
+    transform: translatey(0)
+  }
+
+  30%,
+  90% {
+    transform: translatey(-2px)
+  }
+}
+
+@keyframes lineDropping {
+  0% {
+    background-position: 70px 8px, 80px 25px, 75px 42px;
+    opacity: 1;
+  }
+
+  50% {
+    background-position: 0px 8px, 15px 25px, 5px 42px
+  }
+
+  60% {
+    background-position: -20px 8px, 0px 25px, -8px 42px
+  }
+
+  75%,
+  100% {
+    background-position: -20px 8px, -20px 25px, -20px 42px;
+    opacity: 0;
+  }
+}
+
+.loader-box {
+  width: 200px;
+  height: 8px;
+  background: hsl(var(--black) / .05);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: hsl(var(--black) / .1);
+    animation: road 0.5s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background: hsl(var(--black) / .1);
+    animation: road 0.5s linear infinite;
+    animation-delay: 0.15s;
+  }
+}
+
+@keyframes road {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

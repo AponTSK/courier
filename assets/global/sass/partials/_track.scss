@@ -1,0 +1,211 @@
+.track-form {
+    max-width: 904px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 4px;
+    border: 1px solid hsl(var(--base) / .4);
+    border-radius: 12px;
+    overflow: hidden;
+
+    .form--control {
+        border: 0;
+        flex: 1;
+    }
+
+    &:focus-within {
+        border-color: hsl(var(--base));
+    }
+}
+
+.track-data {
+    max-width: 904px;
+    width: 100%;
+    margin: 48px auto 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid hsl(var(--black) / .1);
+    --inner-p: 32px;
+
+    @include md-screen {
+        --inner-p: 20px;
+    }
+
+    @include msm-screen {
+        --inner-p: 16px;
+    }
+
+    &-header {
+        padding: 20px 24px;
+        background-color: hsl(var(--base)/0.075);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    &-address {
+        margin-bottom: var(--inner-p);
+        width: calc(50% - (var(--inner-p)));
+
+        @include md-screen {
+            width: 100%;
+        }
+
+        .title {
+            color: hsl(var(--base-two) / .6);
+            font-size: rem(18px);
+            font-weight: 600;
+            line-height: 120%;
+            margin-bottom: 12px;
+
+            @include md-screen {
+                font-size: rem(16px);
+            }
+        }
+
+        .name {
+            color: hsl(var(--base-two) / .8);
+            font-weight: 700;
+            line-height: 120%;
+            margin-bottom: 8px;
+
+            @include md-screen {
+                font-size: rem(14px);
+            }
+        }
+
+        .address {
+            line-height: 120%;
+            color: hsl(var(--base-two) / .6);
+
+            @include md-screen {
+                font-size: rem(14px);
+            }
+        }
+    }
+
+    &-type {
+        color: hsl(var(--base));
+        font-size: rem(18px);
+        font-weight: 600;
+        line-height: 120%;
+
+        @include md-screen {
+            font-size: rem(14px);
+        }
+    }
+
+    &-top {
+        padding: var(--inner-p) calc(var(--inner-p) * 2);
+        border-bottom: 1px solid hsl(var(--black) / .15);
+
+        &-wrapper {
+            position: relative;
+            justify-content: space-between;
+            display: flex;
+            gap: calc(var(--inner-p) * 2);
+            flex-wrap: wrap;
+
+            @include md-screen {
+                gap: var(--inner-p);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 1px;
+                height: 100%;
+                background-color: hsl(var(--black) / .15);
+                top: 0;
+                left: 50%;
+
+                @include md-screen {
+                    display: none;
+                }
+            }
+        }
+
+    }
+
+    &-body {
+        padding: var(--inner-p) calc(var(--inner-p) * 2);
+    }
+
+    &-item {
+        padding-left: 24px;
+        position: relative;
+
+        .shape-circle {
+            position: absolute;
+            top: 0;
+            left: -9px;
+            display: flex;
+            background: hsl(var(--white));
+            outline: 4px solid hsl(var(--white));
+        }
+
+        &.active {
+            .shape-circle {
+                svg circle {
+                    &:first-child {
+                        stroke: hsl(var(--base));
+                    }
+
+                    &:last-child {
+                        fill: hsl(var(--base));
+                    }
+                }
+            }
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background-color: hsl(var(--base-two) / .4);
+        }
+
+        &:not(:last-child) {
+            padding-bottom: 44px;
+
+            @include md-screen {
+                padding-bottom: 32px;
+            }
+        }
+
+        .date {
+            color: hsl(var(--base-two) / .6);
+            line-height: 120%;
+            margin-bottom: 8px;
+
+            @include md-screen {
+                font-size: rem(14px);
+            }
+        }
+
+        .title {
+            color: hsl(var(--base-two) / .8);
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 120%;
+            margin-bottom: 4px;
+
+            @include md-screen {
+                font-size: rem(16px);
+            }
+        }
+
+        .address {
+            color: hsl(var(--base-two) / .8);
+
+            @include md-screen {
+                font-size: rem(14px);
+            }
+        }
+    }
+}

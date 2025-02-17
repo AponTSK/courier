@@ -1,0 +1,69 @@
+// /* Font Family*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ========================= Css Variables Start ======================== */
+:root {
+  /* Font Family */
+  --heading-font: 'Raleway', sans-serif;
+  --body-font: 'Open Sans', sans-serif;
+  --dh-h: 99px;
+
+  /* ========================= Theme Color Start ============================= */
+
+  /* Base Color */
+  @include colorVariable(--base, #F7805E, 10);
+
+  /* Base Two Color */
+  @include colorVariable(--base-two, #091e42, 10);
+
+  /* ========================= Theme Color End ============================= */
+
+  /* ========================= Color Variables Start =========================== */
+  // White Color
+  @include colorVariable(--white, #ffffff);
+
+  //Light Color
+  @include colorVariable(--light, #626F86);
+
+  // Black Color
+  @include colorVariable(--black, #000000);
+
+  //Border Color
+  @include colorVariable(--border-color, #B3B9C4);
+
+  // Section Background
+  @include colorVariable(--section-bg, #f0f8ff);
+
+  --heading-color: var(--light);
+  --text-color: var(--light);
+  --background-color: var(--black);
+
+  /* ================================ Box Shadow Start =============================== */
+  // Card box shadow
+  --box-shadow: 0px 0px 4px 0px hsl(var(--black) / 0.04),
+    0px 4px 8px 0px hsl(var(--black) / 0.06);
+  /* ================================ Box Shadow End =============================== */
+
+  /* ============================== Bootstrap Modifier Start ============================== */
+  /* Primary Color */
+  @include colorVariable(--primary, #007AFF, 5);
+
+  /* Secondary Color */
+  @include colorVariable(--secondary, #57D3C9, 5);
+
+  /* Success Color */
+  @include colorVariable(--success, #34C559, 5);
+
+  /* Danger Color */
+  @include colorVariable(--danger, #EB4E3D, 5);
+
+  /* Warning Color */
+  @include colorVariable(--warning, #FC0, 5);
+
+  /* Info Color */
+  @include colorVariable(--info, #007BFF, 5);
+
+  /* ============================== Bootstrap Modifier End ============================== */
+}
+
+/* ========================= Css Variables End =========================== */

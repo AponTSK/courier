@@ -1,0 +1,50 @@
+/* ================================= Pagination Css Start =========================== */
+.pagination {
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .page-item {
+    &.active {
+      .page-link {
+        background-color: hsl(var(--base));
+        color: hsl(var(--white));
+        border-color: hsl(var(--base));
+      }
+    }
+
+    &.disabled {
+      .page-link {
+        background-color: hsl(var(--black) / 0.15);
+        cursor: no-drop;
+      }
+    }
+
+    .page-link {
+      border: 1px solid hsl(var(--base-two) / 0.1);
+      margin: 0 5px;
+      border-radius: 6px;
+      height: 36px;
+      width: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      font-weight: 500;
+      padding: 0;
+      color: hsl(var(--base-two));
+      font-size: rem(15px);
+
+      &:hover {
+        background-color: hsl(var(--base));
+        color: hsl(var(--white));
+        border-color: hsl(var(--base));
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+/* ================================= Pagination Css End =========================== */

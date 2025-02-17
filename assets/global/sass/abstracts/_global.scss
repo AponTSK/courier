@@ -1,0 +1,63 @@
+/* ====================== Section Heading ==================== */
+.section-heading {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+
+  @include lg-screen {
+    margin-bottom: 40px;
+  }
+
+  @include md-screen {
+    margin-bottom: 32px;
+  }
+
+  @include sm-screen {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+  }
+
+  &__desc {
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-size: rem(18px);
+
+    @include xl-screen {
+      font-size: rem(16px);
+    }
+
+    @include sm-screen {
+      font-size: rem(14px);
+    }
+  }
+
+  // Style left
+  &.style-left {
+    text-align: left;
+    margin-bottom: 32px;
+
+    @include md-screen {
+      margin-bottom: 24px;
+    }
+
+    .section-heading {
+      &__desc {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1392px;
+  }
+}
+
+/* ====================== Section Heading En d==================== */

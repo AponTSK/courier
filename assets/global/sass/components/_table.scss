@@ -1,0 +1,433 @@
+/* ================================= Table Css Start =========================== */
+
+.table-wrapper {
+  border-radius: 14px;
+  background: hsl(var(--white));
+  box-shadow: 0px 4px 20px 2px hsl(var(--black) / 0.03);
+  padding: 20px 32px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 12px;
+  }
+
+  &-footer {
+    margin-top: 16px;
+  }
+
+  &-title {
+    margin-bottom: 0;
+  }
+
+  @include lg-screen {
+    padding: 16px 20px;
+  }
+
+  @include msm-screen {
+    padding: 16px;
+  }
+}
+
+.table-tab {
+  overflow-x: auto;
+
+  &-list {
+    display: flex;
+    gap: 6px;
+  }
+
+  &-link {
+    padding: 7px 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: hsl(var(--base-two) / .6);
+    background-color: hsl(var(--white));
+    border: 1px solid hsl(var(--base-two) / .1);
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &.active {
+      color: hsl(var(--base));
+      background-color: hsl(var(--base) / .1);
+      border-color: hsl(var(--base));
+    }
+  }
+}
+
+.action-buttons {
+  @extend .flex-align;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.edit-btn {
+  color: hsl(var(--info));
+  background-color: hsl(var(--info) / 0.08);
+}
+
+.delete-btn {
+  color: hsl(var(--danger));
+  background-color: hsl(var(--danger) / 0.08);
+}
+
+.table {
+  margin: 0;
+  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0px 0px;
+
+  thead {
+    tr {
+      th {
+        background-color: hsl(var(--white));
+        text-align: center;
+        padding: 16px;
+        color: hsl(var(--base-two) / 0.6);
+        font-weight: 600;
+        border-bottom: 0;
+        max-width: 170px;
+        @include fs-14;
+        border: 0;
+        background-color: transparent;
+
+        &:not(:first-child) {
+          border-left: 0;
+        }
+
+        &:first-child {
+          text-align: left;
+          padding-left: 0;
+        }
+
+        &:last-child {
+          text-align: right;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  tbody {
+    border: 0 !important;
+    background-color: hsl(var(--white));
+
+    tr {
+      &:last-child {
+        border-bottom: 0;
+      }
+
+      &:last-child {
+        td {
+          border-bottom: 0;
+
+          &:first-child {
+            border-radius: 0px 0 0 6px;
+          }
+
+          &:last-child {
+            border-radius: 0 0px 6px 0;
+          }
+        }
+      }
+
+      td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 24px 16px;
+        border-width: 1px;
+        border: 0;
+        color: hsl(var(--black) / 0.7);
+        font-weight: 500;
+        max-width: 170px;
+        @include fs-16;
+        border-bottom: 1px solid hsl(var(--base-two) / 0.03);
+
+        &::before {
+          content: attr(data-label);
+          @include fs-15;
+          color: hsl(var(--black));
+          font-weight: 500;
+          display: none;
+          width: 45% !important;
+          text-align: left;
+        }
+
+        &:first-child {
+          text-align: left;
+          padding-left: 0;
+        }
+
+        &:last-child {
+          text-align: right;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@mixin responsive-table($breakpoint) {
+
+  @if $breakpoint==991px {
+    @include xl-screen {
+      tr {
+        td {
+          font-size: 0.875rem !important;
+        }
+      }
+    }
+  }
+
+  @if $breakpoint==1199px {
+    @include xxl-screen {
+      tr {
+        td {
+          font-size: 0.875rem !important;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint) {
+    thead {
+      display: none;
+    }
+
+    tbody {
+
+      tr:has(td .empty-data) {
+        background-color: transparent;
+      }
+
+      td:has(.empty-data) {
+        width: 100%;
+        background-color: transparent;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      tr {
+        display: block;
+
+        &:nth-child(odd) {
+          background-color: hsl(var(--base-two) / 0.03);
+        }
+
+        &:last-child td {
+          border-bottom: 0;
+        }
+
+        td {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 15px;
+          text-align: right;
+          padding: 16px !important;
+          border: none;
+          border-bottom: 1px solid hsl(var(--base-two) / 0.03);
+          max-width: unset;
+          background-color: transparent;
+
+          &:last-child {
+            border: none;
+          }
+
+          &:first-child {
+            text-align: right;
+            border-left: 0;
+          }
+
+          &::before {
+            display: block;
+            @include fs-14;
+            color: hsl(var(--black) / 0.7);
+          }
+        }
+      }
+    }
+  }
+}
+
+.table--responsive {
+  &--md {
+    @include responsive-table(991px);
+  }
+
+  &--lg {
+    @include responsive-table(1199px);
+  }
+
+  &--xl {
+    @include responsive-table(1399px);
+  }
+
+  &--xxl {
+    @include responsive-table(1599px);
+  }
+}
+
+// bulk table
+
+.bulk-table {
+  overflow-x: auto;
+  border: 1px solid hsl(var(--base-two) / .2);
+  border-radius: 12px;
+
+  .table {
+    th {
+      position: relative;
+      background-color: #F1F2F4;
+
+      &:not(:last-child, :nth-last-of-type(2)) {
+        &::after {
+          content: "";
+          position: absolute;
+          height: 24px;
+          width: 1px;
+          background-color: hsl(var(--base-two) / .3);
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    td {
+      background-color: hsl(var(--white));
+    }
+
+    th,
+    td {
+      min-width: 210px;
+      max-width: auto;
+      padding: 16px !important;
+      vertical-align: middle;
+
+      &:last-child {
+        position: sticky;
+        right: 0;
+        min-width: 90px;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 8px 0px rgba(0, 0, 0, 0.06);
+        text-align: center;
+
+        @include sm-screen {
+          min-width: 80px;
+        }
+      }
+
+      @include sm-screen {
+        min-width: 160px;
+        padding: 12px !important;
+        font-size: 0.875rem !important;
+      }
+
+      @include xsm-screen {
+        min-width: 130px;
+        padding-inline: 6px !important;
+      }
+    }
+  }
+
+  .form--control {
+    border-radius: 8px;
+    border: 1px solid hsl(var(--base-two) / .2);
+    padding: 10px 16px;
+    font-size: 0.875rem;
+
+    &:focus {
+      border-color: hsl(var(--base));
+    }
+
+  }
+
+  .select2-container--default :is(.select2-selection--multiple, .select2-selection--single) {
+    min-height: 41px;
+    border: 1px solid hsl(var(--base-two) / .2) !important;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 41px;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 41px;
+    font-size: 0.875rem !important;
+  }
+
+  .select2-results__option {
+    font-size: 14px;
+    text-align: left;
+  }
+}
+
+.order-history {
+  padding: 0;
+
+  .table-wrapper-header,
+  .table-wrapper-footer {
+    padding: 24px;
+    margin: 0;
+  }
+
+  .table-wrapper-footer {
+    border-top: 1px solid hsl(var(--base-two) / .1);
+  }
+
+  table {
+    th {
+      background-color: #F1F2F4 !important;
+      padding: 16px 24px !important;
+    }
+
+    td {
+      padding: 24px !important;
+      font-size: 0.875rem !important;
+      border-color: hsl(var(--base-two) / 0.1) !important;
+    }
+
+    .badge {
+      border: 0;
+    }
+  }
+}
+
+.sort-btn {
+  margin-left: 4px;
+  color: hsl(var(--base-two) / .6);
+}
+
+.empty-data {
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  img {
+    max-width: 150px;
+    width: 100%;
+  }
+
+  .text {
+    color: hsl(var(--base-two) / .5);
+    font-weight: 600;
+  }
+}
+
+/* ================================= Table Css End =========================== */

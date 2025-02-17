@@ -1,0 +1,96 @@
+.cal-section {
+    background: linear-gradient(to right, hsl(var(--success) / .1), hsl(var(--base) / .1));
+    position: relative;
+
+    &__leftbg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: 100%;
+
+        @include xxxl-screen {
+            width: 260px;
+        }
+
+        @include md-screen {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__rightbg {
+        position: absolute;
+        bottom: 30px;
+        right: 80px;
+        width: 300px;
+
+        @include md-screen {
+            display: none;
+        }
+
+        @include xxxl-screen {
+            width: 200px;
+            right: 20px;
+            bottom: 20px;
+        }
+    }
+}
+
+.cal-form {
+    background-color: hsl(var(--white) / .4);
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    padding: 56px 48px;
+    margin: 0 auto;
+    border-radius: 40px;
+    border: 1px solid hsl(var(--base) / .4);
+    backdrop-filter: blur(15px);
+
+    @include xl-screen {
+        padding: 32px 24px;
+        border-radius: 24px;
+        max-width: 720px;
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: 32px 48px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include xl-screen {
+            gap: 24px;
+        }
+
+        @include msm-screen {
+            gap: 20px;
+        }
+    }
+
+    &__item {
+        width: calc(50% - 24px);
+
+        &:last-child {
+            margin-top: 24px;
+
+            @include msm-screen {
+                margin-top: 12px;
+            }
+        }
+
+        @include xl-screen {
+            width: calc(50% - 12px);
+        }
+
+        @include sm-screen {
+            width: 100%;
+        }
+    }
+}

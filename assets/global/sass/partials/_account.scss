@@ -1,0 +1,595 @@
+/* ========================= Contact Section CSS Start ========================= */
+.contact-card {
+    --card-border-radius: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: var(--card-border-radius);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+
+    .social-list__link {
+        color: hsl(var(--base-two) / 0.75);
+        font-size: 1.125rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact-card {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+.contact-card-left,
+.contact-card-right {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.contact-card-left {
+    position: relative;
+    max-width: 47%;
+    border-top-left-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
+}
+
+.contact-card-left__thumb {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-top-left-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
+}
+
+@media screen and (max-width: 767px) {
+    .contact-card-left__thumb {
+        aspect-ratio: 1/0.8;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: var(--card-border-radius);
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .contact-card-left__thumb {
+        aspect-ratio: 1/1;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .contact-card-left {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact-card-left {
+        max-width: 100%;
+    }
+}
+
+.contact-card-right {
+    max-width: 53%;
+    padding: 40px;
+    border-top-right-radius: var(--card-border-radius);
+    border-bottom-right-radius: var(--card-border-radius);
+}
+
+@media screen and (max-width: 1199px) {
+    .contact-card-right {
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact-card-right {
+        padding: 40px 32px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact-card-right {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .contact-card-right {
+        padding: 32px 24px;
+    }
+}
+
+.contact-info {
+    width: 100%;
+    max-width: 325px;
+    padding: 24px;
+    position: absolute;
+    border-radius: 20px;
+    background-color: hsl(var(--white));
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 8px 16px 0px rgba(0, 0, 0, 0.08);
+}
+
+@media screen and (min-width: 1200px) {
+    .contact-info {
+        top: 50%;
+        left: -116px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .contact-info {
+        top: 48px;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contact-info {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .contact-info {
+        max-width: calc(100% - 56px);
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .contact-info {
+        max-width: calc(100% - 32px);
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .contact-info {
+        padding: 16px;
+    }
+}
+
+.contact-info-list-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 12px;
+}
+
+.contact-info-list-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 575px) {
+    .contact-info-list-item:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .contact-info-list-item:not(:last-child) {
+        margin-bottom: 8px;
+    }
+}
+
+.contact-info-list-item__icon {
+    --size: 48px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: hsl(var(--base) / .1);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    font-size: 20px;
+    color: hsl(var(--base));
+}
+
+@media screen and (max-width: 575px) {
+    .contact-info-list-item__icon {
+        --size: 36px;
+    }
+}
+
+.contact-info-list-item__label {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 120%;
+    display: block;
+    color: hsl(var(--gray-d-400)/0.7);
+    margin-bottom: 4px;
+}
+
+@media screen and (max-width: 575px) {
+    .contact-info-list-item__label {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .contact-info-list-item__label {
+        font-size: 0.75rem;
+    }
+}
+
+.contact-info-list-item__text,
+.contact-info-list-item__link:not(.style-two) {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 120%;
+    color: hsl(var(--gray-d-400));
+}
+
+@media screen and (max-width: 575px) {
+
+    .contact-info-list-item__text,
+    .contact-info-list-item__link:not(.style-two) {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 374px) {
+
+    .contact-info-list-item__text,
+    .contact-info-list-item__link:not(.style-two) {
+        font-size: 0.875rem;
+    }
+}
+
+.contact-info-list-item__link.style-two {
+    color: hsl(var(--gray-d-500));
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 120%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 6px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
+.contact-info-list-item__link:hover,
+.contact-info-list-item__link:focus {
+    color: hsl(var(--base-d-400));
+}
+
+.contact-info-social {
+    max-width: 254px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px 12px;
+    margin-top: 40px;
+}
+
+.contact-info-social__label {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 150%;
+    color: hsl(var(--gray-l-500));
+}
+
+@media screen and (max-width: 374px) {
+    .contact-info-social__label {
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .contact-info-social {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .contact-info-social {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .contact-info-social {
+        max-width: 200px;
+    }
+}
+
+.contact-form__title {
+    font-weight: 400;
+    line-height: 120%;
+    font-family: var(--custom-font);
+    margin-bottom: 20px;
+}
+
+.contact-form .form-control.form--control {
+    border-color: hsl(var(--border-color)/0.5);
+}
+
+
+.contact-map iframe {
+    height: 540px;
+    width: 100%;
+    display: block;
+
+    @include sm-screen {
+        height: 350px;
+    }
+
+    @include msm-screen {
+        height: 300px;
+    }
+}
+
+/* ========================= Contact Section CSS End =========================== */
+
+/* =========================================== Account Css Start =========================*/
+.account {
+    height: 100vh;
+}
+
+.account-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.account-form {
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 48px;
+    scrollbar-width: none;
+
+    @include md-screen {
+        width: 100%;
+        padding: 24px;
+    }
+
+    @include msm-screen {
+        width: 100%;
+        padding: 16px;
+    }
+
+    &__logo {
+        max-width: 170px;
+        width: 100%;
+
+        @include md-screen {
+            max-width: 150px;
+        }
+
+        @include msm-screen {
+            max-width: 132px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 80px;
+        flex-wrap: wrap;
+    }
+
+    &-inner {
+        max-width: 440px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__content {
+        margin-bottom: 40px;
+    }
+}
+
+.account-thumb {
+    width: 50%;
+    padding: 24px;
+    height: 100%;
+    position: relative;
+
+    @include md-screen {
+        display: none;
+    }
+
+    &-text {
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        color: hsl(var(--white));
+
+        @include xl-screen {
+            font-size: rem(36px);
+        }
+
+        @include lg-screen {
+            font-size: rem(32px);
+        }
+    }
+
+    img {
+        border-radius: 16px;
+    }
+}
+
+.social-auth {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__link {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radsius: 8px;
+        background: hsl(var(--white));
+        box-shadow: 0px 0px 4px 0px hsl(var(--black) / 0.04),
+            0px 4px 8px 0px hsl(var(--black) / 0.06);
+        justify-content: center;
+        transition: all linear .3s;
+
+        &:hover {
+            box-shadow: 0px 0px 4px 0px hsl(var(--black) / 0.08),
+                0px 4px 8px 0px hsl(var(--black) / 0.1);
+            background: hsl(var(--black) / 0.02);
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .text {
+            color: hsl(var(--black) / 0.5);
+            @include fs-17;
+            font-weight: 500;
+        }
+    }
+}
+
+.auth-divider {
+    margin: 32px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: hsl(var(--base-two) / 0.1);
+        z-index: -1;
+    }
+
+    .text {
+        background-color: hsl(var(--white));
+        padding-inline: 8px;
+        font-size: rem(14px);
+    }
+}
+
+.language-dropdown {
+    &__btn {
+        border: 1px solid hsl(var(--base-two) / 0.2);
+        padding: 12px 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+
+        @include lg-screen {
+            padding: 10px 12px;
+        }
+
+        @include md-screen {
+            padding: 6px 8px;
+        }
+
+        .img {
+            height: 24px;
+
+
+            width: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+
+            @include md-screen {
+                height: 16px;
+                width: 16px;
+            }
+        }
+
+        .text {
+            color: hsl(var(--base-two));
+            font-size: rem(18px);
+            font-weight: 600;
+            line-height: 120%;
+
+            @include lg-screen {
+                font-size: rem(16px);
+            }
+
+            @include msm-screen {
+                font-size: rem(14px);
+            }
+        }
+
+        .icon {
+            font-size: rem(14px);
+        }
+    }
+
+    &__item {
+        padding: 9px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        cursor: pointer;
+        transition: all linear .3s;
+
+        @include msm-screen {
+            padding: 7px 12px;
+        }
+
+        &:hover {
+            background-color: hsl(var(--base-two) / 0.05);
+        }
+
+        .img {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            border: 1px solid hsl(var(--black) / 0.1);
+
+            @include msm-screen {
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+/* ============================================ Account Css End ====================================*/

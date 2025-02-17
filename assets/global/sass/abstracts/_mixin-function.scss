@@ -1,0 +1,127 @@
+@use 'sass:math';
+
+@mixin space-y($val) {
+  &> :not([hidden])~ :not([hidden]) {
+    margin-top: #{convertToRem($val)}rem;
+    margin-bottom: #{convertToRem($val)}rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin space-x($val) {
+  &> :not([hidden])~ :not([hidden]) {
+    margin-left: #{convertToRem($val)}rem;
+    margin-right: #{convertToRem($val)}rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+
+  @if $width==$height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+// Loop Base colors
+@mixin loopColors($name, $flows, $limits: 9) {
+  $i: 1;
+  $deep: 100;
+  $opacity: 0.1;
+
+  @while $i < $limits {
+    @if ($flows=='dark') {
+      #{$name}-d-#{$deep}: var(#{$name}-h) var(#{$name}-s) calc(var(#{$name}-l) - var(#{$name}-l) * $opacity);
+    }
+
+    @if ($flows=='light') {
+      #{$name}-l-#{$deep}: var(#{$name}-h) calc(var(#{$name}-s)) calc(var(#{$name}-l) + (100% - var(#{$name}-l)) * $opacity);
+    }
+
+    // increase Value
+    $i: $i+1;
+    $deep: $deep+100;
+    $opacity: $opacity+0.1;
+  }
+}
+
+@mixin colorVariable($name, $hex, $loop: 0) {
+  // Convert hex to RGB values
+  $h: floor(hue($hex));
+  $s: saturation($hex);
+  $l: lightness($hex);
+
+  // Convert hex to RGB values
+  $h: math.round(hue($hex));
+  $s: math.round(saturation($hex));
+  $l: math.round(lightness($hex));
+  $string-h: #{$h + ''};
+
+  @if ($loop>0) {
+    #{$name}-h: str-slice($string-h, 1, -4);
+    #{$name}-s: $s;
+    #{$name}-l: $l;
+    #{$name}: var(#{$name}-h) var(#{$name}-s) var(#{$name}-l);
+    @include loopColors(#{$name}, 'dark', $loop);
+    @include loopColors(#{$name}, 'light', $loop);
+  }
+
+  @else {
+    #{$name}: str-slice($string-h, 1, -4) #{$s} #{$l};
+  }
+}
+
+@mixin btn-style($name, $color: --white) {
+  &#{$name} {
+    background-color: hsl(var(#{$name})) !important;
+
+    @if ($name==--secondary) {
+      color: hsl(var(--base-two)) !important;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      background-color: hsl(var(#{$name}-d-200)) !important;
+      border: 1px solid hsl(var(#{$name}-d-200)) !important;
+    }
+
+    @if ($name==--light) {
+      color: hsl(var(--base-two)) !important;
+      border: 1px solid hsl(var(--base) / .4) !important;
+      background-color: hsl(var(--base) / .1) !important;
+
+      &:hover,
+      &:focus,
+      &:focus-visible {
+        background-color: hsl(var(--base)) !important;
+        color: hsl(var(--white)) !important;
+        border: 1px solid hsl(var(--base)) !important;
+      }
+    }
+  }
+
+  &-outline#{$name} {
+    background-color: transparent !important;
+    border: 1px solid hsl(var(#{$name})) !important;
+    color: hsl(var(#{$name})) !important;
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      background-color: hsl(var(#{$name})) !important;
+      color: hsl(var(#{$color})) !important;
+    }
+  }
+}

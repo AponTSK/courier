@@ -1,0 +1,201 @@
+.flatpickr-calendar {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid hsl(var(--base-two) / .1);
+    box-shadow: -3px 3px 0px hsl(var(--black) / .03);
+    box-shadow: none;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.numInput.cur-year {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: hsl(var(--black) / .7);
+}
+
+.flatpickr-monthDropdown-months {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    appearance: none;
+    background-image: var(--bs-form-select-bg-img),
+        var(--bs-form-select-bg-icon, none) !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0rem center !important;
+    background-size: 11px 12px !important;
+    padding-right: 12px !important;
+}
+
+
+.flatpickr-current-month input.cur-year {
+    padding: 0 0 0 16px !important;
+}
+
+.flatpickr-months {
+    margin-bottom: 12px;
+    border-bottom: 1px solid hsl(var(--base-two) / .1);
+    background-color: hsl(var(--black) / .05);
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    height: 24px !important;
+    top: 6px !important;
+    width: 24px;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    background-color: hsl(var(--white));
+
+    svg {
+        height: 10px !important;
+        width: 10px !important;
+    }
+
+    path {
+        fill: hsl(var(--base-two)) !important;
+    }
+
+    &:hover {
+        path {
+            fill: hsl(var(--base-two)) !important;
+        }
+    }
+}
+
+.flatpickr-prev-month {
+    left: 6px !important;
+}
+
+.flatpickr-next-month {
+    right: 6px !important;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover,
+.flatpickr-day.selected.prevMonthDay,
+.flatpickr-day.startRange.prevMonthDay,
+.flatpickr-day.endRange.prevMonthDay,
+.flatpickr-day.selected.nextMonthDay,
+.flatpickr-day.startRange.nextMonthDay,
+.flatpickr-day.endRange.nextMonthDay {
+    background: hsl(var(--base));
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: hsl(var(--white));
+    border-color: hsl(var(--base));
+}
+
+.flatpickr-day.today {
+    border-color: hsl(var(--base));
+    color: hsl(var(--base));
+}
+
+.flatpickr-day.today:hover,
+.flatpickr-day.today:focus {
+    border-color: hsl(var(--base) / .01);
+    background: hsl(var(--base) / .1);
+    color: hsl(var(--base));
+}
+
+
+.flatpickr-day.inRange,
+.flatpickr-day.prevMonthDay.inRange,
+.flatpickr-day.nextMonthDay.inRange,
+.flatpickr-day.today.inRange,
+.flatpickr-day.prevMonthDay.today.inRange,
+.flatpickr-day.nextMonthDay.today.inRange,
+.flatpickr-day:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover,
+.flatpickr-day:focus,
+.flatpickr-day.prevMonthDay:focus,
+.flatpickr-day.nextMonthDay:focus {
+    cursor: pointer;
+    outline: 0;
+    background: hsl(var(--base) / .1);
+    border-color: hsl(var(--base) / .01);
+    color: hsl(var(--base));
+}
+
+.flatpickr-day.inRange {
+    box-shadow: -5px 0 0 hsl(var(--base)/0.01), 5px 0 0 hsl(var(--base)/0.09);
+}
+
+.flatpickr-day.selected.startRange {
+    box-shadow: 5px 0 0 hsl(var(--base)/0.09);
+}
+
+.flatpickr-day.selected.startRange+.endRange:not(:nth-child(7n+1)),
+.flatpickr-day.startRange.startRange+.endRange:not(:nth-child(7n+1)),
+.flatpickr-day.endRange.startRange+.endRange:not(:nth-child(7n+1)) {
+    -webkit-box-shadow: -10px 0 0 hsl(var(--base));
+    box-shadow: -10px 0 0 hsl(var(--base));
+}
+
+
+.form--control {
+    &.datepicker2 {
+        position: relative;
+        padding-right: 40px;
+
+        &:disabled,
+        &:read-only {
+            background-color: transparent;
+            border: 1px solid hsl(var(--border-color));
+
+            &:focus {
+                border-color: hsl(var(--black) / .2);
+            }
+        }
+    }
+}
+
+.datepicker-inner {
+    position: relative;
+    z-index: 1;
+    background-color: hsl(var(--white));
+
+    .form--control {
+        border: 1px solid hsl(var(--base-two) / .15) !important;
+    }
+
+    &.time-picker {
+        &::after {
+            content: "\f017";
+            font-family: "Font Awesome 5 Free";
+        }
+    }
+
+    &::after {
+        content: "\f073";
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        height: 100%;
+        width: 40px;
+        right: 0;
+        top: 0;
+        display: grid;
+        place-content: center;
+        z-index: -1;
+        font-size: 20px;
+    }
+}
+
+.delivery-type {
+    .datepicker-inner {
+        max-width: 700px;
+        width: 100%;
+    }
+}

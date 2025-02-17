@@ -1,0 +1,73 @@
+@use "sass:string";
+@use "sass:math";
+
+@function convertToRem($px) {
+  @if unit($px)==rem {
+    $value-without-unit: math.div($px, ($px * 0 + 1));
+    @return $value-without-unit;
+  }
+
+  @else if unit($px)==px {
+    $value-without-unit: math.div($px, ($px * 0 + 1));
+    $val: calc($value-without-unit / 16);
+    @return $val;
+  }
+
+  @else if unit($px)=="" {
+    $val: calc($px / 16);
+    @return $val;
+  }
+
+  @else {
+    @warn "Invalid px 🚫 -> You must share px✅, rem✅, or only number✅ ";
+    @return "";
+  }
+}
+
+@function formatFloatingNumber($number) {
+  @return calc(round($number * 10000) / 10000);
+}
+
+@function clampCal($minSize, $maxSize, $minWidth: 375, $maxWidth: 1199) {
+  $minREMsize: convertToRem($minSize);
+  $maxREMsize: convertToRem($maxSize);
+  $minREMwidth: convertToRem($minWidth);
+  $maxREMwidth: convertToRem($maxWidth);
+
+  $slopFontCal: calc($maxREMsize - $minREMsize);
+  $slopWidthCal: calc($maxREMwidth - $minREMwidth);
+
+  $slop: calc($slopFontCal / $slopWidthCal);
+
+  $minusWidth: calc($minREMwidth * -1);
+  $xAxisIntersection: calc($minusWidth * $slop + $minREMsize);
+  $preferred: calc($slop * 100);
+
+  $xAxisMax: formatFloatingNumber($xAxisIntersection);
+  $preferredMax: formatFloatingNumber($preferred);
+
+  @return clamp(#{$minREMsize}rem,
+    #{$xAxisMax}rem + #{$preferredMax}vw,
+    #{$maxREMsize}rem);
+}
+
+@function rem($val) {
+  @if unit($val)==em {
+    @return $val;
+  }
+
+  @else {
+    @return #{convertToRem($val)}rem;
+  }
+}
+
+
+@mixin line-clamp($lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// ============================= Use of this function, Please Uncomment this class and see how it works =============================

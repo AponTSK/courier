@@ -1,0 +1,249 @@
+/* ================================= Common Typography Css Start =========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--body-font);
+  color: hsl(var(--text-color));
+  word-break: break-word;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  @include fs-16;
+  font-weight: 400;
+  margin: 0;
+  color: hsl(var(--text-color));
+}
+
+span {
+  display: inline-block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 20px 0;
+  font-family: var(--heading-font);
+  color: hsl(var(--base-two) / .9);
+  line-height: 1.3;
+  font-weight: 700;
+
+  @include sm-screen {
+    margin: 0 0 15px 0;
+  }
+}
+
+h1 {
+  font-size: rem(56px);
+
+  @include xl-screen {
+    font-size: rem(48px);
+  }
+
+  @include lg-screen {
+    font-size: rem(42px);
+  }
+
+  @include md-screen {
+    font-size: rem(38px);
+  }
+
+  @include sm-screen {
+    font-size: rem(36px);
+  }
+
+  @include msm-screen {
+    font-size: rem(28px);
+  }
+
+  @include xsm-screen {
+    font-size: rem(24px);
+  }
+}
+
+h2 {
+  font-size: rem(48px);
+
+  @include xl-screen {
+    font-size: rem(42px);
+  }
+
+  @include lg-screen {
+    font-size: rem(38px);
+  }
+
+  @include md-screen {
+    font-size: rem(32px);
+  }
+
+  @include sm-screen {
+    font-size: rem(28px);
+  }
+
+  @include msm-screen {
+    font-size: rem(24px);
+  }
+}
+
+h3 {
+  font-size: rem(32px);
+
+  @include xl-screen {
+    font-size: rem(28px);
+  }
+
+  @include lg-screen {
+    font-size: rem(24px);
+  }
+
+  @include md-screen {
+    font-size: rem(22px);
+  }
+
+  @include msm-screen {
+    font-size: rem(20px);
+  }
+}
+
+h4 {
+  font-size: rem(24px);
+
+  @include xl-screen {
+    font-size: rem(22px);
+  }
+
+  @include lg-screen {
+    font-size: rem(20px);
+  }
+
+  @include md-screen {
+    font-size: rem(19px);
+  }
+
+  @include sm-screen {
+    font-size: rem(18px);
+  }
+
+  @include msm-screen {
+    font-size: rem(17px);
+  }
+}
+
+h5 {
+  font-size: rem(20px);
+
+  @include xl-screen {
+    font-size: rem(19px);
+  }
+
+  @include lg-screen {
+    font-size: rem(18px);
+  }
+
+  @include md-screen {
+    font-size: rem(17px);
+  }
+
+  @include sm-screen {
+    font-size: rem(16px);
+  }
+
+  @include msm-screen {
+    font-size: rem(16px);
+  }
+}
+
+h6 {
+  font-size: rem(18px);
+
+  @include xl-screen {
+    font-size: rem(17px);
+  }
+
+  @include lg-screen {
+    font-size: rem(16px);
+  }
+
+  @include md-screen {
+    font-size: rem(15px);
+  }
+}
+
+h1>a,
+h2>a,
+h3>a,
+h4>a,
+h5>a,
+h6>a {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  transition: 0.2s linear;
+  line-height: 1.3;
+}
+
+a {
+  display: inline-block;
+  transition: 0.2s linear;
+  text-decoration: none;
+  color: hsl(var(--info));
+}
+
+a:hover {
+  color: hsl(var(--base));
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+select {
+  cursor: pointer;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.form-select:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.dashboard-body {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--body-font);
+  }
+}
+
+/* ================================= Common Typography Css End =========================== */

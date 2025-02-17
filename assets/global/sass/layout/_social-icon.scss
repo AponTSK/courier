@@ -1,0 +1,30 @@
+/* ================================= Social Icon Css Start =========================== */
+.social-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+
+    @include xl-screen {
+        gap: 16px;
+    }
+
+    &__link {
+        font-size: 24px;
+        transition: all linear .3s;
+        cursor: pointer;
+        color: hsl(var(--white));
+
+        @include xl-screen {
+            font-size: 20px;
+        }
+
+        &.active,
+        &:hover,
+        &:focus {
+            color: hsl(var(--base)) !important;
+        }
+    }
+}
+
+/* ================================= Social Icon Css End ===========================  */

@@ -1,0 +1,1 @@
+ALTER TABLE `deposits` ADD `is_web` TINYINT(1) NOT NULL DEFAULT '0' COMMENT 'This will be 1 if the request is from NextJs application' AFTER `from_api`;

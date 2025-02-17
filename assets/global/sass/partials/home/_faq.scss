@@ -1,0 +1,47 @@
+.faq-item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @include md-screen {
+        gap: 24px;
+    }
+}
+
+.faq-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: calc(50% - 20px);
+
+    @include md-screen {
+        width: calc(50% - 12px);
+    }
+
+    @include sm-screen {
+        width: 100%;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        display: grid;
+        place-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        color: hsl(var(--base));
+        border: 1px solid hsl(var(--base));
+
+        @include md-screen {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+.faq-section {
+    .section-heading__text {
+        max-width: 740px;
+        width: 100%;
+    }
+}

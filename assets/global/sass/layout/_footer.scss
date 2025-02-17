@@ -1,0 +1,174 @@
+/* ============= Footer Start Here ======================= */
+.footer-area {
+  background-color: hsl(var(--base-two));
+  color: hsl(var(--white));
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+
+  &__shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-repeat: repeat-x !important;
+    background-size: auto 100% !important;
+    animation: footer-shape 60s linear infinite;
+  }
+}
+
+@keyframes footer-shape {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 1920px 0;
+  }
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 12px 40px;
+  flex-wrap: wrap;
+
+  @include xl-screen {
+    gap: 12px 24px;
+  }
+
+  &__title {
+    color: hsl(var(--white) / .8);
+    font-weight: 600;
+  }
+}
+
+.footer-item {
+  &__logo {
+    margin-bottom: 24px;
+
+    a {
+      img {
+        max-width: 200px;
+        width: 100%;
+
+        @include xl-screen {
+          max-width: 160px;
+        }
+      }
+    }
+  }
+
+  &__desc {
+    color: hsl(var(--white) / 0.8);
+    @extend .mb-60;
+    max-width: 330px;
+    width: 100%;
+
+    @include lg-screen {
+      @include fs-14;
+    }
+  }
+
+  &__title {
+    color: hsl(var(--white));
+    margin-bottom: 24px;
+    position: relative;
+
+    @include lg-screen {
+      @include fs-15;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+/* Footer List Item */
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: block;
+    padding-bottom: 24px;
+
+    @include xl-screen {
+      padding-bottom: 16px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: hsl(var(--white) / 0.8);
+
+    &:hover {
+      color: hsl(var(--base));
+      text-decoration: underline;
+    }
+
+    @include lg-screen {
+      @include fs-14;
+    }
+  }
+}
+
+.footer-payment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-content: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @include md-screen {
+    justify-content: flex-start;
+  }
+
+  img {
+    max-width: 42px;
+    width: 100%;
+
+    @include xl-screen {
+      max-width: 32px;
+    }
+  }
+}
+
+/* ============= Footer End Here ======================= */
+
+/* ============= Bottom Footer End Here ======================= */
+.bottom-footer {
+  border-top: 1px solid hsl(var(--white) / 0.05);
+
+  &-text {
+    @include lg-screen {
+      @include fs-14;
+    }
+  }
+}
+
+.bottom-nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include lg-screen {
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    color: hsl(var(--white) / 0.8);
+
+    @include lg-screen {
+      font-size: rem(14px);
+    }
+  }
+}
+
+/* =============Bottom Footer End Here ======================= */

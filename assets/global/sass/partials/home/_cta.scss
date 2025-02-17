@@ -1,0 +1,62 @@
+.cta-section {
+    padding: 150px 0;
+    background-color: hsl(var(--base-two));
+    position: relative;
+    overflow: hidden;
+
+    @include lg-screen {
+        padding: 100px 0;
+    }
+
+    @include md-screen {
+        padding: 80px 0;
+    }
+
+    @include sm-screen {
+        padding: 60px 0;
+    }
+
+    @include msm-screen {
+        padding: 50px 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 1;
+
+        &__shape {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+
+            @include md-screen {
+                display: none;
+            }
+        }
+
+        &__title {
+            max-width: 824px;
+            width: 100%;
+            color: hsl(var(--white));
+            margin-bottom: 64px;
+
+            @include lg-screen {
+                margin-bottom: 48px;
+            }
+
+            @include md-screen {
+                margin-bottom: 36px;
+            }
+
+            @include sm-screen {
+                margin-bottom: 24px;
+            }
+        }
+    }
+}

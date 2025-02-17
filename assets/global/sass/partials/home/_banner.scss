@@ -1,0 +1,123 @@
+/* =========================== Banner Section Start Here ========================= */
+.banner-section {
+    padding-block: 70px;
+    --banner-p: 32px;
+
+    @include md-screen {
+        --banner-p: 0;
+        padding-block: 50px;
+    }
+}
+
+.banner-content {
+    padding-right: var(--banner-p);
+
+    @include md-screen {
+        text-align: center;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        @include md-screen {
+            justify-content: center;
+        }
+    }
+
+    &__subtitle {
+        @include fs-16;
+        font-weight: 600;
+        color: hsl(var(--base));
+        border: 1px solid hsl(var(--base));
+        padding: 10px 20px;
+        border-radius: 24px;
+        line-height: 1.1;
+        margin-bottom: 12px;
+
+        @include md-screen {
+            font-size: rem(14px);
+            padding: 8px 16px;
+        }
+    }
+
+    &__title {
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    &__desc {
+        max-width: 600px;
+        margin-bottom: 48px;
+        color: hsl(var(--base-two) / .6);
+        font-size: rem(18px);
+
+        @include xl-screen {
+            font-size: rem(16px);
+        }
+
+        @include md-screen {
+            margin-bottom: 32px;
+            font-size: rem(14px);
+        }
+    }
+}
+
+.banner-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.banner-wrapper {
+    padding-left: var(--banner-p);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+    position: relative;
+
+    @include lg-screen {
+        gap: 16px;
+    }
+
+
+    @include msm-screen {
+        gap: 12px;
+    }
+
+    @include md-screen {
+        max-width: 520px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+.banner-thumb {
+    border-radius: 24px;
+    overflow: hidden;
+
+    @include msm-screen {
+        border-radius: 16px;
+    }
+
+    &:nth-child(1),
+    &:nth-child(3) {
+        grid-row: span 1;
+    }
+
+    &:nth-child(2) {
+        grid-row: span 2;
+    }
+}
+
+/* =========================== Banner Section End Here ========================= */

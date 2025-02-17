@@ -1,0 +1,121 @@
+/* ================================= Button Css Start =========================== */
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  color: none;
+  background-color: none;
+  border-color: none;
+}
+
+.pill {
+  border-radius: 40px !important;
+}
+
+.btn {
+  color: hsl(var(--white)) !important;
+  font-weight: 500;
+  padding: 18px 26px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid transparent;
+  font-family: var(--body-font);
+  display: inline-block !important;
+  @include fs-16;
+  line-height: 1;
+
+  &:has(.icon) {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+
+    .icon {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include xl-screen {
+    padding: 14px 20px;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    box-shadow: none !important;
+  }
+
+  &:active {
+    top: 1px;
+  }
+
+  &--lg {
+    padding: 20px 35px;
+
+    @include md-screen {
+      padding: 18px 30px;
+    }
+
+    @include sm-screen {
+      padding: 16px 25px;
+    }
+  }
+
+  &--md {
+    padding: 13px 18px;
+    font-weight: 600;
+    font-size: rem(12px);
+
+    @include sm-screen {
+      padding: 11px 16px;
+    }
+  }
+
+  &--sm {
+    padding: 7px 18px;
+    font-weight: 600;
+    font-size: rem(12px);
+
+    @include sm-screen {
+      padding: 8px 12px;
+    }
+  }
+
+  &--edit {
+    border: 1px solid hsl(var(--base-two) / .4) !important;
+    color: hsl(var(--base-two) / .6) !important;
+    padding: 10px 16px;
+
+    i {
+      font-size: rem(18px);
+    }
+
+    &:hover,
+    &:active {
+      background-color: hsl(var(--base-two) / .7) !important;
+      color: hsl(var(--white)) !important;
+    }
+  }
+
+  &--icon {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    @include fs-15;
+    padding: 0;
+  }
+
+  // @include btn-style(--base);
+  @include btn-style(--base);
+  @include btn-style(--primary);
+  @include btn-style(--secondary);
+  @include btn-style(--danger);
+  @include btn-style(--warning);
+  @include btn-style(--info);
+  @include btn-style(--light);
+  @include btn-style(--base-two);
+  @include btn-style(--gray);
+}
+
+/* ================================= Button Css End =========================== */
